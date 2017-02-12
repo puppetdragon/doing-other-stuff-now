@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>flAWS - Level 2</title>
+        <style>
+            body { font-family: Andale Mono, monospace; }
+        </style>
+    </head>
+<body text="#00d000" bgcolor="#000000"  style="max-width:800px; margin-left:auto ;margin-right:auto">
+<center><h1>flAWS - Level 2</h1></center>
+<h3>Lesson learned</h3>
+On AWS you can set up S3 buckets with all sorts of permissions and functionality including using them to host static files.  A number of people accidentally open them up with permissions that are too loose.  Just like how you shouldn't allow directory listings of web servers, you shouldn't allow bucket listings.
+
+<h4>Examples of this problem</h4>
+<ul> 
+  <li>Directory listing of S3 bucket of <a href="https://hackerone.com/reports/163476">Legal Robot</a> and <a href="https://hackerone.com/reports/57505">Shopify</a>
+  <li>Read and write permissions to S3 bucket for <a href="https://hackerone.com/reports/98819">Shopify</a>, <a href="https://hackerone.com/reports/131468">Shopify again</a>, and 
+  <a href="https://hackerone.com/reports/111643">Udemy</a>.  This challenge did not have read and write permissions (as that would destroy the challenge for other players), but it is a common problem.
+</ul>
+
+
+
+<h1>Level 2</h1>
+The next level is fairly similar, with a slight twist.
+
+For hints, see <a href="/hint1.txt">hint1.txt</a>
