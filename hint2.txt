@@ -1,0 +1,18 @@
+Level 2: Hint 2
+================
+
+People often accidentally add secret things to git repos, and then try to remove them without revoking or rolling the secrets.  You can look through the history of a git repo by running:
+
+```
+git log
+```
+
+Then you can look at what a git repo looked like at the time of a commit by running:
+
+```
+git checkout f7cebc46b471ca9838a0bdd1074bb498a3f84c87
+```
+
+where `f7cebc46b471ca9838a0bdd1074bb498a3f84c87` would be the hash for the commit shown in `git log`.
+
+Need another hint?  Go to hint3.txt

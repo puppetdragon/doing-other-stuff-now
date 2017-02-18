@@ -1,12 +1,29 @@
 <html>
     <head>
         <title>flAWS - Level 2</title>
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
         <style>
             body { font-family: Andale Mono, monospace; }
         </style>
     </head>
-<body text="#00d000" bgcolor="#000000"  style="max-width:800px; margin-left:auto ;margin-right:auto">
-<center><h1>flAWS - Level 2</h1></center>
+<body 
+  text="#00d000" 
+  bgcolor="#000000"  
+  style="max-width:800px; margin-left:auto ;margin-right:auto"
+  vlink="#00ff00" link="#00ff00">
+<center>
+<pre>
+ _____  _       ____  __    __  _____
+|     || |     /    ||  |__|  |/ ___/
+|   __|| |    |  o  ||  |  |  (   \_ 
+|  |_  | |___ |     ||  |  |  |\__  |
+|   _] |     ||  _  ||  `  '  |/  \ |
+|  |   |     ||  |  | \      / \    |
+|__|   |_____||__|__|  \_/\_/   \___|
+</pre>
+<h1>flAWS - Level 2</h1>
+</center>
+
 <h3>Lesson learned</h3>
 On AWS you can set up S3 buckets with all sorts of permissions and functionality including using them to host static files.  A number of people accidentally open them up with permissions that are too loose.  Just like how you shouldn't allow directory listings of web servers, you shouldn't allow bucket listings.
 
@@ -17,9 +34,11 @@ On AWS you can set up S3 buckets with all sorts of permissions and functionality
   <a href="https://hackerone.com/reports/111643">Udemy</a>.  This challenge did not have read and write permissions (as that would destroy the challenge for other players), but it is a common problem.
 </ul>
 
+<h3>Avoiding the mistake</h3>
+By default, S3 buckets are private and secure when they are created.  To allow it to be accessed as a web page, I had turn on "Static Website Hosting" and changed the bucket policy to allow everyone "s3:GetObject" privileges, which is fine if you plan to publicly host the bucket as a web page.  But then to introduce the flaw, I changed the permissions to add "Everyone" to have "List" permissions.
 
-
+<hr size=3 color="#00d000" />
 <h1>Level 2</h1>
-The next level is fairly similar, with a slight twist.
+The next level is fairly similar, with a slight twist.  Time to find you first AWS key! I bet you'll find something that will let you list what other buckets are.
 
-For hints, see <a href="/hint1.txt">hint1.txt</a>
+<p>For hints, see <a href="/hint1.txt">hint1.txt</a>
