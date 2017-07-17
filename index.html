@@ -1,9 +1,10 @@
 <html>
     <head>
-        <title>flAWS - Level 2</title>
+        <title>flAWS - Level 3</title>
         <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
         <style>
             body { font-family: Andale Mono, monospace; }
+            img { margin: 10px; display: block; margin-left: auto; margin-right: auto; }
         </style>
     </head>
 <body 
@@ -21,24 +22,26 @@
 |  |   |     ||  |  | \      / \    |
 |__|   |_____||__|__|  \_/\_/   \___|
 </pre>
-<h1>flAWS - Level 2</h1>
+<h1>flAWS - Level 3</h1>
 </center>
 
 <h3>Lesson learned</h3>
-On AWS you can set up S3 buckets with all sorts of permissions and functionality including using them to host static files.  A number of people accidentally open them up with permissions that are too loose.  Just like how you shouldn't allow directory listings of web servers, you shouldn't allow bucket listings.
+Similar to opening permissions to "Everyone", people accidentally open permissions to "Any Authenticated AWS User".  They might mistakenly think this will only be users of their account, when in fact it means anyone that has an AWS account.
 
 <h4>Examples of this problem</h4>
 <ul> 
-  <li>Directory listing of S3 bucket of <a href="https://hackerone.com/reports/163476">Legal Robot</a> and <a href="https://hackerone.com/reports/57505">Shopify</a>
-  <li>Read and write permissions to S3 bucket for <a href="https://hackerone.com/reports/98819">Shopify</a>, <a href="https://hackerone.com/reports/131468">Shopify again</a>, and 
-  <a href="https://hackerone.com/reports/111643">Udemy</a>.  This challenge did not have read and write permissions (as that would destroy the challenge for other players), but it is a common problem.
+  <li>Open permissions for authenticated AWS user on Shopify (<a href="https://hackerone.com/reports/98819">link</a>)
 </ul>
 
 <h3>Avoiding the mistake</h3>
-By default, S3 buckets are private and secure when they are created.  To allow it to be accessed as a web page, I had turn on "Static Website Hosting" and changed the bucket policy to allow everyone "s3:GetObject" privileges, which is fine if you plan to publicly host the bucket as a web page.  But then to introduce the flaw, I changed the permissions to add "Everyone" to have "List" permissions.
+Only open permissions to specific AWS users.
+
+<img style="max-width:500px" src="./authenticated_users.png">
 
 <hr size=3 color="#00d000" />
-<h1>Level 2</h1>
-The next level is fairly similar, with a slight twist.  Time to find you first AWS key! I bet you'll find something that will let you list what other buckets are.
+<h1>Level 3</h1>
+The next level is fairly similar, with a slight twist.  Time to find your first AWS key! I bet you'll find something that will let you list what other buckets are.
 
-<p>For hints, see <a href="/hint1.txt">hint1.txt</a>
+<p>For hints, see <a href="./hint1.html">Hint 1</a>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
